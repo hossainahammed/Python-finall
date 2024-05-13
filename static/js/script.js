@@ -86,3 +86,47 @@ for (let i = 0; i < accordionBtn.length; i++) {
   });
 
 }
+
+
+function addToCart(product) {
+  $.ajax({
+      type: 'POST',
+      url: '/add-to-cart',
+      contentType: 'application/json',
+      data: JSON.stringify({'product': product}),
+      success: function(response) {
+          if (response.success) {
+              $('#total-price').text(response.total_price.toFixed(2));
+              updateCartItems();
+          }
+      }
+  });
+}
+
+function removeFromCart(product) {
+  $.ajax({
+      type: 'POST',
+      url: '/remove-from-cart',
+      contentType: 'application/json',
+      data: JSON.stringify({'product': product}),
+      success: function(response) {
+          if (response.success) {
+              $('#total-price').text(response.total_price.toFixed(2));
+              updateCartItems();
+          }
+      }
+  });
+}
+
+function updateCartItems() {
+  $.ajax({
+      type: 'GET',
+      url: '/cart-items',
+      success: function(response) {
+          $('#cart-items').empty();
+          response.cart_items.forEach(function(item) {
+              $('#cart-items').append('<li>' + item.name + ' - $' + item.price + '</li>');
+          });
+      }
+  });
+}

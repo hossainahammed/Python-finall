@@ -77,10 +77,8 @@
 
   </div>
 
-
-
-
-
+  
+ 
   <!--
     - NOTIFICATION TOAST
   -->
@@ -3284,6 +3282,38 @@
   </main>
 
 
+  <h1>Product Information</h1>
+  <table>
+      <thead>
+          <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for product in products %}
+          <tr>
+              <td>{{ product.name }}</td>
+              <td>${{ product.price }}</td>
+              <td>
+                  <button onclick="addToCart('{{ product.name }}')">Add to Cart</button>
+                  <button onclick="removeFromCart('{{ product.name }}')">Remove from Cart</button>
+              </td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+  <div id="cart-info">
+    <h2>Shopping Cart</h2>
+    <ul id="cart-items">
+        <!-- Display cart items dynamically using JavaScript -->
+    </ul>
+    <p>Total Price: $<span id="total-price">0.00</span></p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 
 
 
