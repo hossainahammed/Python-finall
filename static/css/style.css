@@ -2635,3 +2635,39 @@ footer {
   }
 
 }
+
+.card-farme:hover .image img {
+  transform: scale(1.1);
+
+
+}
+.btn.btn-primary {
+  background-color:#ff4f9d;   
+  border-color: pink;
+}
+.btn.btn-primary:hover {
+  background-color:#E80479;
+}
+.rating{
+  display: flex;
+  justify-content: center;
+  color:burlywood;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid black;
+}
+
+th, td {
+  border: 1px solid rgb(7, 128, 228);
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {background-color: #f5f5f5;}

@@ -18,7 +18,7 @@ def index():
 def add_to_cart():
     data = request.get_json()
     product_name = data['product']
-    product = next((p for p in products if p.name == product_name), None)
+    product = next((p for p in products if  p.name == product_name), None)
     if product:
         cart.add_item(product)
         total_price = cart.total_price()
