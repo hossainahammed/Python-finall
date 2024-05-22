@@ -2636,8 +2636,21 @@ footer {
 
 }
 
+.card img {
+  height: 200px;
+  background-color: #f2f3f5;
+  transition: transform 2s ease-in-out;
+  
+}
+
+
+.image{
+  overflow: hidden;
+
+}
+
 .card-farme:hover .image img {
-  transform: scale(1.1);
+  transform: scale(1.2);
 
 
 }
@@ -2645,6 +2658,7 @@ footer {
   background-color:#ff4f9d;   
   border-color: pink;
 }
+
 .btn.btn-primary:hover {
   background-color:#E80479;
 }
@@ -2653,6 +2667,16 @@ footer {
   justify-content: center;
   color:burlywood;
 }
+
+.relative:hover .absolute{
+
+display: block;
+
+}
+.absolute{
+  display: none;
+}
+
 
 table {
   border-collapse: collapse;
